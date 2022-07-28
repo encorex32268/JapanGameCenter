@@ -16,19 +16,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.JanpanGameCenter"
+        android:theme="@style/Theme.JapanGameCenter"
         tools:targetApi="31">
         <activity
             android:name="com.lihan.japangamecenter.presentation.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.JanpanGameCenter">
+            android:theme="@style/Theme.JapanGameCenter">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA4Xo1m35k-rguE4C-0dXZHpCsxdUPm6oE" />
     </application>
 
 </manifest>

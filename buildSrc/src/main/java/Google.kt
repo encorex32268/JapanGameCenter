@@ -5,7 +5,7 @@ object Google {
     private const val map_version = "18.0.2"
     const val map = "com.google.android.gms:play-services-maps:${map_version}"
 
-    private const val map_compose_version = "2.2.0"
+    private const val map_compose_version = "2.5.3"
     const val map_compose = "com.google.maps.android:maps-compose:${map_compose_version}"
 
 }

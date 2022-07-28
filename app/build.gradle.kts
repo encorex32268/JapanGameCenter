@@ -58,6 +58,8 @@ dependencies {
     implementation(Compose.compose_tooling_preview)
     implementation(Compose.compose_lifecycle_runtime)
     implementation(Compose.compose_activity)
+
+
     testImplementation(Test.junit)
     androidTestImplementation(Test.ext_junit)
     androidTestImplementation(Test.espresso)
@@ -66,6 +68,8 @@ dependencies {
     debugImplementation(Compose.compose_ui_test_manifest)
     implementation(Compose.navigation)
     implementation(Compose.viewModelCompose)
+    implementation(Compose.hiltNavigationCompose)
+
 
     kapt(Room.roomCompiler)
     implementation(Room.roomKtx)
