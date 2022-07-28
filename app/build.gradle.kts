@@ -73,4 +73,8 @@ dependencies {
 
     implementation(DaggerHilt.hiltAndroid)
     kapt(DaggerHilt.hiltCompiler)
+
+
+    implementation(Google.location)
+
 }
