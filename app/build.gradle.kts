@@ -3,8 +3,8 @@ plugins {
     kotlin("android")
     id("dagger.hilt.android.plugin")
     id("kotlin-kapt")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version "2.0.1"
 }
-
 
 android {
     compileSdk = ProjectConfig.compileSdk
@@ -20,6 +20,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
     }
 
     buildTypes {
