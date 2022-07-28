@@ -1,7 +1,7 @@
-package com.lihan.janpangamecenter.di
+package com.lihan.japangamecenter.di
 
-import com.lihan.janpangamecenter.data.location.DefaultLocationTracker
-import com.lihan.janpangamecenter.domain.location.LocationTracker
+import com.lihan.japangamecenter.data.location.DefaultLocationTracker
+import com.lihan.japangamecenter.domain.location.LocationTracker
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.lihan.janpangamecenter
+package com.lihan.japangamecenter
 
 import org.junit.Test
 

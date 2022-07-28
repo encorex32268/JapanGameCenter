@@ -1,4 +1,4 @@
-package com.lihan.janpangamecenter.ui.theme
+package com.lihan.japangamecenter.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

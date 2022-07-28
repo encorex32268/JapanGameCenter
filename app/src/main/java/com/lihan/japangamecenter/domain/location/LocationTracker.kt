@@ -1,4 +1,4 @@
-package com.lihan.janpangamecenter.domain.location
+package com.lihan.japangamecenter.domain.location
 
 import android.location.Location
 

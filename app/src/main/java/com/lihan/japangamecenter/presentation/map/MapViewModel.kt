@@ -1,9 +1,9 @@
-package com.lihan.janpangamecenter.presentation
+package com.lihan.japangamecenter.presentation.map
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.lihan.janpangamecenter.domain.location.LocationTracker
+import com.lihan.japangamecenter.domain.location.LocationTracker
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

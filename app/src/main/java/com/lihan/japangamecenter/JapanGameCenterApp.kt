@@ -1,4 +1,4 @@
-package com.lihan.janpangamecenter
+package com.lihan.japangamecenter
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

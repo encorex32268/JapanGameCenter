@@ -1,4 +1,4 @@
-package com.lihan.janpangamecenter.data.location
+package com.lihan.japangamecenter.data.location
 
 import android.Manifest
 import android.app.Application
@@ -8,7 +8,7 @@ import android.location.Location
 import android.location.LocationManager
 import androidx.core.content.ContextCompat
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.lihan.janpangamecenter.domain.location.LocationTracker
+import com.lihan.japangamecenter.domain.location.LocationTracker
 import javax.inject.Inject
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException

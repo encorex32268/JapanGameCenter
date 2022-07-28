@@ -76,5 +76,7 @@ dependencies {
 
 
     implementation(Google.location)
+    implementation(Google.map)
+    implementation(Google.map_compose)
 
 }
