@@ -45,7 +45,7 @@ fun MapScreen(
 
     var uiSettings by remember {
         mutableStateOf(MapUiSettings(
-            zoomControlsEnabled = true,
+            zoomControlsEnabled = false,
             myLocationButtonEnabled = true
         )
         )

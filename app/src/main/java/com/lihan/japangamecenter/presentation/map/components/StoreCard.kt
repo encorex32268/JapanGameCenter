@@ -37,9 +37,15 @@ fun StoreCard(
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(spacing.spaceSmall),
+            .padding(
+                start = (spacing.spaceSmall+spacing.spaceMedium)/2,
+                end = spacing.spaceMedium,
+                bottom = spacing.spaceLarge
+            )
+            .height(100.dp),
         shape = RoundedCornerShape(10.dp),
-        elevation = 10.dp
+        elevation = 10.dp,
+
     ){
         Row(
             modifier = Modifier
