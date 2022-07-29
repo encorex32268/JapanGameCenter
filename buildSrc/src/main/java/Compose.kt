@@ -24,4 +24,7 @@ object Compose {
     private const val lifecycleVersion = "2.4.0"
     const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion"
 
+    private const val snapperVersion = "0.2.2"
+    const val snapper=  "dev.chrisbanes.snapper:snapper:${snapperVersion}"
+
 }

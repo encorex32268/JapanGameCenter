@@ -8,14 +8,15 @@ plugins {
 
 android {
     compileSdk = ProjectConfig.compileSdk
-
+    lint {
+        isCheckDependencies = true
+    }
     defaultConfig {
         applicationId =  ProjectConfig.applicationId
         minSdk = ProjectConfig.minSdk
         targetSdk = ProjectConfig.targetSdk
         versionCode = ProjectConfig.versionCode
         versionName  = ProjectConfig.versionName
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -70,6 +71,7 @@ dependencies {
     implementation(Compose.navigation)
     implementation(Compose.viewModelCompose)
     implementation(Compose.hiltNavigationCompose)
+    implementation(Compose.snapper)
 
 
     kapt(Room.roomCompiler)
@@ -83,5 +85,6 @@ dependencies {
     implementation(Google.location)
     implementation(Google.map)
     implementation(Google.map_compose)
+
 
 }

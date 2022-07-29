@@ -33,14 +33,16 @@ class MapViewModel @Inject constructor(
 
     fun getLocation() {
         viewModelScope.launch {
-
             locationTracker.getLocation()?.let {
-                state = state.copy(
-                    location = it
-                )
-                Log.d(TAG, "getLocation: ${it.latitude}")
-                Log.d(TAG, "getLocation: ${it.longitude}")
                 _uiEvent.send(UiEvent.LocationGet(LatLng(it.latitude,it.longitude)))
+            }
+        }
+    }
+
+    fun onEvent(event: MapEvent){
+        when(event){
+            is MapEvent.OnLocationChanged->{
+                getLocation()
             }
         }
     }
