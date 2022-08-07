@@ -1,13 +1,12 @@
 package com.lihan.japangamecenter.presentation.map
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.gms.maps.model.LatLng
+import com.lihan.japangamecenter.data.Taito
 import com.lihan.japangamecenter.data.UiEvent
 import com.lihan.japangamecenter.domain.location.LocationTracker
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -31,10 +30,22 @@ class MapViewModel @Inject constructor(
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
+    init {
+        getAllGameCenter()
+    }
+
+    private fun getAllGameCenter() {
+        //LoadAllGameCenter
+        state = state.copy(
+            stores = Taito.jsontest
+        )
+    }
+
+
     fun getLocation() {
         viewModelScope.launch {
             locationTracker.getLocation()?.let {
-                _uiEvent.send(UiEvent.LocationGet(LatLng(it.latitude,it.longitude)))
+                _uiEvent.send(UiEvent.LocationUpdate(LatLng(it.latitude,it.longitude)))
             }
         }
     }
@@ -43,6 +54,14 @@ class MapViewModel @Inject constructor(
         when(event){
             is MapEvent.OnLocationChanged->{
                 getLocation()
+            }
+            is MapEvent.OnClickStoreMark->{
+                state = state.copy(
+                    displayStore = event.gameCenter
+                )
+                viewModelScope.launch {
+                    _uiEvent.send(UiEvent.OnGameStoreMarkClick)
+                }
             }
         }
     }

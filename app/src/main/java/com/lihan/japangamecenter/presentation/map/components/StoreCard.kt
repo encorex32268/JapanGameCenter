@@ -2,11 +2,15 @@ package com.lihan.japangamecenter.presentation.map.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -21,32 +25,32 @@ import com.lihan.japangamecenter.R
 import com.lihan.japangamecenter.data.map.model.GameCenter
 import com.lihan.japangamecenter.ui.LocalSpacing
 
-@Preview
 @Composable
 fun StoreCard(
     modifier: Modifier = Modifier,
-    gameCenter: GameCenter = GameCenter(
-        name = "タイトーステーション 札幌狸小路2丁目店",
-        address = "北海道札幌市中央区南三条西2-14",
-        lat = 43.058197,
-        lng = 141.3386314,
-        maker = "TAITO"
-    )
+    store : GameCenter,
+    OnCloseClick:() -> Unit,
+    OnItemClick:(GameCenter) -> Unit
 ) {
     val spacing = LocalSpacing.current
-    Card(
+    Box(
         modifier = modifier
             .fillMaxWidth()
-            .padding(
-                start = (spacing.spaceSmall+spacing.spaceMedium)/2,
-                end = spacing.spaceMedium,
-                bottom = spacing.spaceLarge
-            )
-            .height(100.dp),
-        shape = RoundedCornerShape(10.dp),
-        elevation = 10.dp,
-
+            .clip(RoundedCornerShape(10.dp))
+            .height(100.dp)
+            .background(Color.White)
     ){
+        Icon(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(spacing.spaceSmall)
+                .clickable {
+                     OnCloseClick()
+                },
+            imageVector = Icons.Default.Close,
+            contentDescription = "StoreClose"
+        )
+
         Row(
             modifier = Modifier
                 .fillMaxWidth(),
@@ -55,7 +59,7 @@ fun StoreCard(
         ){
             Image(
                 painter = painterResource(id = R.drawable.ic_launcher_foreground),
-                contentDescription = gameCenter.maker,
+                contentDescription = store.maker,
                 modifier = Modifier
                     .clip(RoundedCornerShape(5.dp))
                     .padding(10.dp)
@@ -68,15 +72,18 @@ fun StoreCard(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(20.dp)
+                    .clickable {
+                        OnItemClick(store)
+                    }
             ) {
                 Text(
-                    text = gameCenter.name,
+                    text = store.name,
                     style = MaterialTheme.typography.body1,
                     fontSize = 12.sp
                 )
                 Spacer(modifier = Modifier.height(spacing.spaceSmall))
                 Text(
-                    text = gameCenter.address,
+                    text = store.address,
                     style = MaterialTheme.typography.body1,
                     fontSize = 12.sp
                 )
