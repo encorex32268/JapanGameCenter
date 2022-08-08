@@ -37,7 +37,7 @@ class MapViewModel @Inject constructor(
     private fun getAllGameCenter() {
         //LoadAllGameCenter
         state = state.copy(
-            stores = Taito.jsontest
+            stores = Taito.getTaitoStore()
         )
     }
 

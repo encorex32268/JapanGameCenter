@@ -86,5 +86,7 @@ dependencies {
     implementation(Google.map)
     implementation(Google.map_compose)
 
+    implementation(Gson.google_gson)
+
 
 }

@@ -58,7 +58,12 @@ fun StoreCard(
             verticalAlignment = Alignment.CenterVertically
         ){
             Image(
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                painter = painterResource(
+                    id = when(store.maker){
+                        "Taito"-> R.drawable.taito_store
+                        else->R.drawable.ic_launcher_foreground
+                    }
+                ),
                 contentDescription = store.maker,
                 modifier = Modifier
                     .clip(RoundedCornerShape(5.dp))
@@ -88,12 +93,6 @@ fun StoreCard(
                     fontSize = 12.sp
                 )
             }
-
-
-
-
-
-
         }
 
     }
